@@ -32,7 +32,7 @@ const container = document.querySelector('#scene-container');
 const scene = new Scene();
 
 // set the background color of the scene (set this to be the same background color of the container)
-scene.background = new Color('skyblue')
+scene.background = new Color('gray')
 
 // create camera
 const fov = 35; // field of view
