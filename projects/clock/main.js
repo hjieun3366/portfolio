@@ -11,15 +11,15 @@ import {
   WebGLRenderer,
   DirectionalLight,
   SphereBufferGeometry,
-} from '../libs/threejs/build/three.module.js'
+} from '../../libs/threejs/build/three.module.js'
 
 import {
   OrbitControls,
-} from '../libs/threejs/examples/jsm/controls/OrbitControls.js'
+} from '../../libs/threejs/examples/jsm/controls/OrbitControls.js'
 
 import {
   GLTFLoader,
-} from '../libs/threejs/examples/jsm/loaders/GLTFLoader.js'
+} from '../../libs/threejs/examples/jsm/loaders/GLTFLoader.js'
 
 // Global variables (we'll use these to rotate our shapes below)
 let rotateX = 0;
@@ -60,11 +60,12 @@ const cube = new Mesh();
 
 const loader = new GLTFLoader();
 
-loader.load('3d_models/hanOkRoof.glb', function(gltf) {
+loader.load('../../assets/3d_models/clock.glb', function(gltf) {
 
   console.log(gltf.scene);
 
-  gltf.scene.scale.set(1, 1, 1);
+  gltf.scene.scale.set(.5, .5, .5);
+  gltf.scene.position.set(0, -2, -10)
   
   scene.add(gltf.scene);
 }, undefined, function(error){

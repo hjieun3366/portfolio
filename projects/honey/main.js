@@ -63,7 +63,7 @@ const cube = new Mesh();
 
 const loader = new GLTFLoader();
 
-loader.load('../3d_models/honeycomb.glb', function(gltf) {
+loader.load('../../assets/3d_models/honeycomb.glb', function(gltf) {
 
   console.log(gltf.scene);
 
