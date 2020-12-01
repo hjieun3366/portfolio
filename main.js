@@ -58,27 +58,59 @@ let mouseClicked = false;
 // as arguments to a mesh
 
 const geometry = new IcosahedronBufferGeometry(1, 0);
-const material = new MeshPhongMaterial({color: "rgba(100, 1, 150, 0.3)"});
-const wireframe = new WireframeGeometry(geometry);
-const line = new LineSegments( wireframe );
-line.material.depthTest = false;
-line.material.opacity = 0.25;
-line.material.transparent = true;
-
-const cube = new Mesh(geometry, material, line);
+const material = new MeshPhongMaterial({color: "rgba(255, 10, 50, 0.5)"});
+const cube = new Mesh(geometry, material);
 
 cube.rotation.set(-0.5, -0.1, 1.8);
-cube.position.set(2, 0, 0);
+cube.position.set(-4, 0, 0);
 cube.scale.set(1.5, 1.5, 1.5);
-// create a sphere
 
-const torGeo = new TorusKnotBufferGeometry( 1, 0.4, 64, 8 );
-const torMat = new MeshStandardMaterial( { color: "rgba(100, 100, 200, 0.2)"} );
-const torusKnot = new Mesh( torGeo, torMat );
+const cubeOneGeo = new IcosahedronBufferGeometry(1, 0);
+const cubeOneMat = new MeshPhongMaterial({color: "rgba(100, 5, 150, 0.3)"});
+const cubeOne = new Mesh(cubeOneGeo, cubeOneMat);
 
-torusKnot.position.set(-2, 0, 0);
+cubeOne.rotation.set(-0.5, -0.1, 1.8);
+cubeOne.position.set(0, 0, 0);
+cubeOne.scale.set(1.5, 1.5, 1.5);
 
-scene.add(cube, torusKnot, light);
+const cubeTwoGeo = new IcosahedronBufferGeometry(1, 0);
+const cubeTwoMat = new MeshPhongMaterial({color: "rgba(200, 100, 0, 0.3)"});
+const cubeTwo = new Mesh(cubeTwoGeo, cubeTwoMat);
+
+cubeTwo.rotation.set(-0.5, -0.1, 1.8);
+cubeTwo.position.set(4, 0, 0);
+cubeTwo.scale.set(1.5, 1.5, 1.5);
+
+const cubeThreeGeo = new IcosahedronBufferGeometry(1, 0);
+const cubeThreeMat = new MeshPhongMaterial({color: "rgba(0, 200, 100, 0.3)"});
+const cubeThree = new Mesh(cubeThreeGeo, cubeThreeMat);
+
+cubeThree.rotation.set(-0.5, -0.1, 1.8);
+cubeThree.position.set(-4, -4, 0);
+cubeThree.scale.set(1.5, 1.5, 1.5);
+
+const cubeFourGeo = new IcosahedronBufferGeometry(1, 0);
+const cubeFourMat = new MeshPhongMaterial({color: "rgba(0, 50, 200, 0.3)"});
+const cubeFour = new Mesh(cubeFourGeo, cubeFourMat);
+
+cubeFour.rotation.set(-0.5, -0.1, 1.8);
+cubeFour.position.set(0, -4, 0);
+cubeFour.scale.set(1.5, 1.5, 1.5);
+
+const cubeFiveGeo = new IcosahedronBufferGeometry(1, 0);
+const cubeFiveMat = new MeshPhongMaterial({color: "rgba(200, 255, 20, 0.3)"});
+const cubeFive = new Mesh(cubeFiveGeo, cubeFiveMat);
+
+cubeFive.rotation.set(-0.5, -0.1, 1.8);
+cubeFive.position.set(4, -4, 0);
+cubeFive.scale.set(1.5, 1.5, 1.5);
+//const torGeo = new TorusKnotBufferGeometry( 1, 0.4, 64, 8 );
+//const torMat = new MeshStandardMaterial( { color: "rgba(100, 100, 200, 0.2)"} );
+//const torusKnot = new Mesh( torGeo, torMat );
+
+//torusKnot.position.set(-2, 0, 0);
+
+scene.add(cube, cubeOne, cubeTwo, cubeThree, cubeFour, cubeFive, light);
 
 
 
@@ -123,9 +155,29 @@ renderer.setAnimationLoop(function() {
       // window.location.assign("https://crouton.net");
     }
   }
-  //cube.rotation.set(rotateX, rotateY, 0);
+  cube.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.002;
+  rotateY+=0.001;
+  cubeOne.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.001;
+  rotateY+=0.002;
+  cubeTwo.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.001;
+  rotateY+=0.001;
+  cubeThree.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.002;
+  rotateY+=0.002;
+  cubeFour.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.002;
+  rotateY+=0.001;
+  cubeFive.rotation.set(rotateX, rotateY, 0);
+  rotateX+=0.001;
+  rotateY+=0.002;
+
+
+  //torusKnot.rotation.set(rotateX, rotateY, 0);
   //rotateX+=0.01;
-  //rotateY+=0.05;
+  //rotateY+=0.02;
 
   controls.update();
   renderer.render(scene, camera);
