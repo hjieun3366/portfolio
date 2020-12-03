@@ -1,0 +1,9 @@
+body {
+    background-image: linear-gradient(180deg, yellow 45px, rgb(48, 1, 48) 250px);
+    background-repeat: no-repeat;
+    max-width:  200vw;
+    height: 100vh;
+    font-family: Helvetica;
+    text-align: center;
+ }
+ 

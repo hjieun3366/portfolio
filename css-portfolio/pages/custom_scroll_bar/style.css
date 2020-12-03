@@ -1,0 +1,36 @@
+body {
+   font-family: Helvetica;
+}
+ 
+h1 {
+   text-align: center;
+}
+
+::-webkit-scrollbar {
+ width: 80px;
+}
+
+::-webkit-scrollbar-track {
+ box-shadow: inset 0 0 5px rgb(1, 118, 214);
+ border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+ background: rgba(17, 0, 255, 0.685);
+ border-radius: 2px;
+}
+ 
+
+::-webkit-scrollbar-thumb:hover {
+ background: #0b0242;
+}
+ 
+.wrapper {
+   width: auto;
+   height: auto;
+}
+ 
+.wrapper:hover {
+cursor: url("pepe.png"), default;
+ 
+}

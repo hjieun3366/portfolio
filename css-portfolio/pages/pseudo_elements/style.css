@@ -1,0 +1,39 @@
+body {
+    float: left;
+    float: right;
+
+}
+
+@font-face {
+    font-family: "myCustomFont";
+    src: url(Ruritania.ttf); 
+}
+
+h1 {
+    font-family: helvetica;
+    text-align: center;
+}
+
+p.intro::first-letter {
+    color: #ff0000;
+    font-size: 200%;;
+    font-family: myCustomFont;
+    line-height: 20px;
+
+}
+
+
+p {
+    color: gray;
+    float: left;
+    position: relative;
+    margin-left: 50%;
+
+}
+
+.pic {
+    float: right;
+    margin-right: 50%;
+    position: absolute;
+    right: 50px;
+}

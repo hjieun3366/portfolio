@@ -30,7 +30,7 @@ const container = document.querySelector('#scene-container');
 const scene = new Scene();
 
 // set the background color of the scene (set this to be the same background color of the container)
-scene.background = new Color('skyblue')
+scene.background = new Color('black')
 
 // create camera
 const fov = 35; // field of view
@@ -62,7 +62,7 @@ const material = new MeshPhongMaterial({color: "rgba(255, 10, 50, 0.5)"});
 const cube = new Mesh(geometry, material);
 
 cube.rotation.set(-0.5, -0.1, 1.8);
-cube.position.set(-4, 0, 0);
+cube.position.set(-4, 3, 0);
 cube.scale.set(1.5, 1.5, 1.5);
 
 const cubeOneGeo = new IcosahedronBufferGeometry(1, 0);
@@ -70,7 +70,7 @@ const cubeOneMat = new MeshPhongMaterial({color: "rgba(100, 5, 150, 0.3)"});
 const cubeOne = new Mesh(cubeOneGeo, cubeOneMat);
 
 cubeOne.rotation.set(-0.5, -0.1, 1.8);
-cubeOne.position.set(0, 0, 0);
+cubeOne.position.set(0, 3, 0);
 cubeOne.scale.set(1.5, 1.5, 1.5);
 
 const cubeTwoGeo = new IcosahedronBufferGeometry(1, 0);
@@ -78,7 +78,7 @@ const cubeTwoMat = new MeshPhongMaterial({color: "rgba(200, 100, 0, 0.3)"});
 const cubeTwo = new Mesh(cubeTwoGeo, cubeTwoMat);
 
 cubeTwo.rotation.set(-0.5, -0.1, 1.8);
-cubeTwo.position.set(4, 0, 0);
+cubeTwo.position.set(4, 3, 0);
 cubeTwo.scale.set(1.5, 1.5, 1.5);
 
 const cubeThreeGeo = new IcosahedronBufferGeometry(1, 0);
@@ -86,7 +86,7 @@ const cubeThreeMat = new MeshPhongMaterial({color: "rgba(0, 200, 100, 0.3)"});
 const cubeThree = new Mesh(cubeThreeGeo, cubeThreeMat);
 
 cubeThree.rotation.set(-0.5, -0.1, 1.8);
-cubeThree.position.set(-4, -4, 0);
+cubeThree.position.set(-4, -2, 0);
 cubeThree.scale.set(1.5, 1.5, 1.5);
 
 const cubeFourGeo = new IcosahedronBufferGeometry(1, 0);
@@ -94,7 +94,7 @@ const cubeFourMat = new MeshPhongMaterial({color: "rgba(0, 50, 200, 0.3)"});
 const cubeFour = new Mesh(cubeFourGeo, cubeFourMat);
 
 cubeFour.rotation.set(-0.5, -0.1, 1.8);
-cubeFour.position.set(0, -4, 0);
+cubeFour.position.set(0, -2, 0);
 cubeFour.scale.set(1.5, 1.5, 1.5);
 
 const cubeFiveGeo = new IcosahedronBufferGeometry(1, 0);
@@ -102,7 +102,7 @@ const cubeFiveMat = new MeshPhongMaterial({color: "rgba(200, 255, 20, 0.3)"});
 const cubeFive = new Mesh(cubeFiveGeo, cubeFiveMat);
 
 cubeFive.rotation.set(-0.5, -0.1, 1.8);
-cubeFive.position.set(4, -4, 0);
+cubeFive.position.set(4, -2, 0);
 cubeFive.scale.set(1.5, 1.5, 1.5);
 //const torGeo = new TorusKnotBufferGeometry( 1, 0.4, 64, 8 );
 //const torMat = new MeshStandardMaterial( { color: "rgba(100, 100, 200, 0.2)"} );

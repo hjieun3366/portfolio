@@ -1,0 +1,14 @@
+body {
+    background-image: url("images/seamlessbackground.jpg");
+    background-repeat: repeat;
+    font-family: helvetica;
+    text-align: center;
+    height: 100%;
+    width:100%;
+}
+
+.image {
+    margin: auto;
+    width: 400px;
+    height: 200px;
+}

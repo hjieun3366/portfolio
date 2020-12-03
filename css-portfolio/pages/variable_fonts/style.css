@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "varFont";
+    src: url(CloisterBlack.ttf); 
+}
+
+@font-face {
+    font-family: "varFont2";
+    src: url(Sketch\ Gothic\ School.ttf); 
+}
+
+@font-face {
+    font-family: "varFont3";
+    src: url(Cardinal.ttf); 
+}
+
+h1 {
+    font-family: Helvetica;
+    font-size: 90px;
+    text-align: center;
+}
+
+h2 {
+    font-family: varFont;
+    font-size: 100px;
+    text-align: center;
+}
+
+h3 {
+    font-family: varFont2;
+    font-size: 100px;
+    text-align: center;
+}
+
+h4 {
+    font-family: varFont3;
+    font-size: 100px;
+    text-align: center;
+}
+

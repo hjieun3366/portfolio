@@ -1,0 +1,10 @@
+body {
+    background-image: url("prz_wallpaper.jpg");
+    background-repeat: repeat-y;
+    height: 100%;
+    background-size: cover;
+    font-family: helvetica;
+    color: white;
+    text-align: center;
+ }
+ 

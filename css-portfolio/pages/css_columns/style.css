@@ -1,0 +1,29 @@
+.div {
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 1px solid;
+    column-width: 100px;
+    text-align: justify;
+}
+
+h1 {
+    line-height: 100px;
+    font-family: helvetica;
+}
+
+h2 {
+    line-height: 2px;
+    font-family: helvetica;
+}
+
+h3 {
+    line-height: 2px;
+    font-family: helvetica;
+}
+
+h4 {
+    line-height: 2px;
+    font-family: helvetica;
+    margin-bottom: 50px;
+}
+

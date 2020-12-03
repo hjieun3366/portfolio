@@ -1,0 +1,18 @@
+body {
+    font-family: Helvetica;
+}
+
+div {
+  background-color: lightskyblue;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+div:hover {
+  background-color: rgb(37, 37, 196);
+}
+
+nav a {
+    
+}

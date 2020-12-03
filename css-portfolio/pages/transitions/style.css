@@ -1,0 +1,29 @@
+body {
+    font-family:helvetica;
+}
+
+.circle {   
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 400px;
+  height: 200px;
+  width: 200px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 50px 20px 5px 20px rgb(255, 196, 0);
+}
+
+.cloud {
+  width: 500px;
+  height: 200px;
+  position: relative;
+  animation: cloudMove 5s infinite;
+  margin-top: 100px;
+  opacity: .5;
+  animation-timing-function: linear;
+}
+
+@keyframes cloudMove {
+  from {left: 20px;}
+  to {left: 800px;}
+}
