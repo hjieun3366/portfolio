@@ -2,7 +2,33 @@ body {
   margin: 0;
   overflow: hidden;
   background: black;
+
 }
+
+#fullpage {
+  height: 100vh
+}
+#fullpage section {
+  height: 100vh;
+}
+#fullpage section h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 100vh;
+}
+#fullpage section:nth-child(1) {
+  background: rgb(242, 242, 240);
+}
+#fullpage section:nth-child(2) {
+  background:rgb(217, 200, 171);
+}
+#fullpage section:nth-child(3) {
+  background: rgb(190, 151, 105);
+}
+#fullpage section:nth-child(4) {
+  background:rgb(165, 119, 81);
+}
+
 
 #scene-container {
   position: absolute;
@@ -21,39 +47,40 @@ body {
   grid-template-rows: auto auto auto auto;
   grid-gap: 10px;
   background: black;
-  height: 75vh;
+  height: 60vh;
   margin-top: 50vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  text-align: center;
 }
 
 .item1 {
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: 2;
-  background: lightgreen;
+  background: lightgrey;
 }
 .item2 {
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  background: lightgreen;
+  background: lightgrey;
 }
 .item3 {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  background: lightgreen;
+  background: lightgrey;
 }
 .item4 {
   grid-column-start: 1;
   grid-row-start: 2;
   grid-row-end: 3;
-  background: lightgreen;
+  background: lightgrey;
 }
 .item5 {
   grid-column: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  background: lightgreen;
+  background: lightgrey;
 }
