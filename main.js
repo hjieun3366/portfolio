@@ -58,8 +58,7 @@ let mouseClicked = false;
 // as arguments to a mesh
 
 const geometry = new IcosahedronBufferGeometry(1, 0);
-const material = new MeshPhongMaterial({color: "rgba(255, 10, 50, 0.5)"});
-//wireframe:true 컬러앞에
+const material = new MeshBasicMaterial({wireframe:true, color: "rgba(255, 10, 50, 0.3)"});
 const cube = new Mesh(geometry, material);
 cube.name = "cubeZero"
 cube.rotation.set(-0.5, -0.1, 1.8);
@@ -67,7 +66,7 @@ cube.position.set(-4, -2, 0);
 cube.scale.set(1.5, 1.5, 1.5);
 
 const cubeOneGeo = new IcosahedronBufferGeometry(1, 0);
-const cubeOneMat = new MeshPhongMaterial({color: "rgba(100, 5, 150, 0.3)"});
+const cubeOneMat = new MeshBasicMaterial({wireframe:true, color: "rgba(100, 5, 150, 0.3)"});
 const cubeOne = new Mesh(cubeOneGeo, cubeOneMat);
 cubeOne.name = "cubeOne"
 cubeOne.rotation.set(-0.5, -0.1, 1.8);
@@ -83,7 +82,7 @@ cubeTwo.position.set(4, -2, 0);
 cubeTwo.scale.set(1.5, 1.5, 1.5);
 
 const cubeThreeGeo = new IcosahedronBufferGeometry(1, 0);
-const cubeThreeMat = new MeshPhongMaterial({color: "rgba(0, 200, 100, 0.3)"});
+const cubeThreeMat = new MeshBasicMaterial({wireframe:true, color: "rgba(0, 200, 100, 0.3)"});
 const cubeThree = new Mesh(cubeThreeGeo, cubeThreeMat);
 cubeThree.name = "cubeThree"
 cubeThree.rotation.set(-0.5, -0.1, 1.8);
@@ -139,19 +138,20 @@ renderer.setAnimationLoop(function() {
     for(let i = 0; i < intersects.length; i++) {
       if(mouseClicked) {
         if(intersects[i].object.name == "cubeZero") {
-          window.location.assign("../projects/honey/index.html");
+          window.location.assign("../projects/neighborhoodSF/index.html");
+          //intersects[i].object.material.color.set(0x000000);
         } 
         else if (intersects[i].object.name == "cubeOne") {
-          window.location.assign("../projects/clock/index.html");
+          window.location.assign("../projects/theRedTree/index.html");
         }
         else if (intersects[i].object.name == "cubeTwo") {
-          window.location.assign("../projects/honey/index.html");
+          window.location.assign("../projects/oneDay/index.html");
         }
         else if (intersects[i].object.name == "cubeThree") {
-          window.location.assign("../projects/room/index.html");
+          window.location.assign("../projects/publicLibrary/index.html");
         }
         else if (intersects[i].object.name == "cubeFour") {
-          window.location.assign("../projects/honey/index.html");
+          window.location.assign("../projects/lotus/index.html");
         }
         else if (intersects[i].object.name == "cubeFive") {
           window.location.assign("../projects/hanok/index.html");
