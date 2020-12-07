@@ -4,20 +4,21 @@
     box-sizing: border-box;
 }
 
-/*header {
-    padding: 10vmin;
+header {
+    float: left;
     background: #0f4c81;
     text-align: center;
-    margin-bottom: 2vmin;
-    height: 100%;
-    width: 20%;
+    height: 100vh;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
 }
 
-header h1 {
+/*header h1 {
     font-size: 5vmin;
     font-family: helvetica;
     color: white;
-}*/
+}
 
 
 #navbar {
@@ -44,7 +45,7 @@ nav li {
     font-size: 40px;
     margin-left: 50px;
     text-decoration: none;
-}
+}*/
 
 .d1{background: #00060D;}
 .d2{background: #044BD9;}
@@ -79,10 +80,10 @@ nav li {
     justify-content: center;
 }
 
-/*.gallery__item {
+.gallery__item {
     margin: 0px;
     border-width: 2px;
     border-color: white;
     border-style: solid;
     padding: 10px;
-}*/
+}

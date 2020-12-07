@@ -16,9 +16,11 @@ import {
   Raycaster,
   Vector2,
   WireframeGeometry,
-  LineSegments,
+  BufferGeometryLoader,
+  LineSegments
 } from '../libs/threejs/build/three.module.js'
 import { OrbitControls } from '../libs/threejs/examples/jsm/controls/OrbitControls.js'
+
 
 let rotateX = 0;
 let rotateY = 0;
@@ -58,59 +60,62 @@ let mouseClicked = false;
 // as arguments to a mesh
 
 const geometry = new IcosahedronBufferGeometry(1, 0);
-const material = new MeshPhongMaterial({color: "rgba(255, 10, 50, 0.5)"});
-//wireframe:true 컬러앞에
+const material = new MeshPhongMaterial({wireframe:true,color: "rgba(255, 10, 50, 0.5)"});
 const cube = new Mesh(geometry, material);
-cube.name = "cubeZero"
 cube.rotation.set(-0.5, -0.1, 1.8);
-cube.position.set(-4, -2, 0);
+cube.position.set(-4, 3, 0);
 cube.scale.set(1.5, 1.5, 1.5);
+
+const loader = new BufferGeometryLoader();
+loader.load("projects/hanok/index.html");
 
 const cubeOneGeo = new IcosahedronBufferGeometry(1, 0);
 const cubeOneMat = new MeshPhongMaterial({color: "rgba(100, 5, 150, 0.3)"});
 const cubeOne = new Mesh(cubeOneGeo, cubeOneMat);
-cubeOne.name = "cubeOne"
+
 cubeOne.rotation.set(-0.5, -0.1, 1.8);
-cubeOne.position.set(0, -2, 0);
+cubeOne.position.set(0, 3, 0);
 cubeOne.scale.set(1.5, 1.5, 1.5);
 
 const cubeTwoGeo = new IcosahedronBufferGeometry(1, 0);
 const cubeTwoMat = new MeshPhongMaterial({color: "rgba(200, 100, 0, 0.3)"});
 const cubeTwo = new Mesh(cubeTwoGeo, cubeTwoMat);
-cubeTwo.name = "cubeTwo"
+
 cubeTwo.rotation.set(-0.5, -0.1, 1.8);
-cubeTwo.position.set(4, -2, 0);
+cubeTwo.position.set(4, 3, 0);
 cubeTwo.scale.set(1.5, 1.5, 1.5);
 
 const cubeThreeGeo = new IcosahedronBufferGeometry(1, 0);
 const cubeThreeMat = new MeshPhongMaterial({color: "rgba(0, 200, 100, 0.3)"});
 const cubeThree = new Mesh(cubeThreeGeo, cubeThreeMat);
-cubeThree.name = "cubeThree"
+
 cubeThree.rotation.set(-0.5, -0.1, 1.8);
-cubeThree.position.set(-4, 3, 0);
+cubeThree.position.set(-4, -2, 0);
 cubeThree.scale.set(1.5, 1.5, 1.5);
 
 const cubeFourGeo = new IcosahedronBufferGeometry(1, 0);
 const cubeFourMat = new MeshPhongMaterial({color: "rgba(0, 50, 200, 0.3)"});
 const cubeFour = new Mesh(cubeFourGeo, cubeFourMat);
-cubeFour.name = "cubeFour"
+
 cubeFour.rotation.set(-0.5, -0.1, 1.8);
-cubeFour.position.set(0, 3, 0);
+cubeFour.position.set(0, -2, 0);
 cubeFour.scale.set(1.5, 1.5, 1.5);
 
 const cubeFiveGeo = new IcosahedronBufferGeometry(1, 0);
 const cubeFiveMat = new MeshPhongMaterial({color: "rgba(200, 255, 20, 0.3)"});
 const cubeFive = new Mesh(cubeFiveGeo, cubeFiveMat);
-cubeFive.name = "cubeFive"
+
 cubeFive.rotation.set(-0.5, -0.1, 1.8);
-cubeFive.position.set(4, 3, 0);
+cubeFive.position.set(4, -2, 0);
 cubeFive.scale.set(1.5, 1.5, 1.5);
 //const torGeo = new TorusKnotBufferGeometry( 1, 0.4, 64, 8 );
 //const torMat = new MeshStandardMaterial( { color: "rgba(100, 100, 200, 0.2)"} );
 //const torusKnot = new Mesh( torGeo, torMat );
+
 //torusKnot.position.set(-2, 0, 0);
 
 scene.add(cube, cubeOne, cubeTwo, cubeThree, cubeFour, cubeFive, light);
+
 
 const renderer = new WebGLRenderer({ antialias: true });
 
@@ -137,27 +142,12 @@ renderer.setAnimationLoop(function() {
   const intersects = raycaster.intersectObjects(scene.children);
   if(intersects.length > 0) {}
     for(let i = 0; i < intersects.length; i++) {
-      if(mouseClicked) {
-        if(intersects[i].object.name == "cubeZero") {
-          window.location.assign("../projects/honey/index.html");
-        } 
-        else if (intersects[i].object.name == "cubeOne") {
-          window.location.assign("../projects/clock/index.html");
-        }
-        else if (intersects[i].object.name == "cubeTwo") {
-          window.location.assign("../projects/honey/index.html");
-        }
-        else if (intersects[i].object.name == "cubeThree") {
-          window.location.assign("../projects/room/index.html");
-        }
-        else if (intersects[i].object.name == "cubeFour") {
-          window.location.assign("../projects/honey/index.html");
-        }
-        else if (intersects[i].object.name == "cubeFive") {
-          window.location.assign("../projects/hanok/index.html");
-        }
+      if(mouseClicked) {intersects[i].object.material.color.set(0xff0000);
+      console.log(intersects[i]);
+      window.location.assign("https://crouton.net");
       }
     }
+
 
   cube.rotation.set(rotateX, rotateY, 0);
   rotateX+=0.002;
@@ -197,7 +187,7 @@ window.addEventListener("resize", function(){
   renderer.render(scene, camera);
 })
 
-/window.addEventListener('mousemove', function(e){
+window.addEventListener('mousemove', function(e){
   // calculate mouse position in normalized device coordinates
   // (-1 to +1) for both components
   mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -209,5 +199,6 @@ window.addEventListener('pointerdown', function(e){
 })
 
 window.addEventListener('pointerup', function(e){
-mouseClicked = false;
+  mouseClicked = false;
 })
+
