@@ -32,7 +32,7 @@ const container = document.querySelector('#scene-container');
 const scene = new Scene();
 
 // set the background color of the scene (set this to be the same background color of the container)
-scene.background = new Color('rgb(176, 190, 126)')
+scene.background = new Color('rgb(182, 53, 53)')
 
 // create camera
 const fov = 35; // field of view
@@ -40,11 +40,10 @@ const aspect = container.clientWidth / container.clientHeight;
 const near = 0.1; // the near clipping plane
 const far = 100; // the far clipping plane
 const camera = new PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(10, 0, 10);
-
+camera.position.set(10, 3, 10);
 
 // create lights
-const light = new DirectionalLight('red', 300);
+const light = new DirectionalLight('brown', 6);
 light.position.set(10, 10, 10);
 
 // create a shape with geometry, material, and then pass those in
@@ -60,12 +59,11 @@ const cube = new Mesh();
 
 const loader = new GLTFLoader();
 
-loader.load('../../assets/3d_models/tree.glb', function(gltf) {
+loader.load('../../assets/3d_models/hanOkRoof.glb', function(gltf) {
 
   console.log(gltf.scene);
 
-  gltf.scene.scale.set(0.7, 0.7, 0.7);
-  gltf.scene.position.set(0, -4, 0);
+  gltf.scene.scale.set(3, 3, 3);
   
   scene.add(gltf.scene);
 }, undefined, function(error){
