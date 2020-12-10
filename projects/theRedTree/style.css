@@ -45,7 +45,16 @@ body {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
 }
-
+.videoSize {
+  position: relative;
+  object-fit: cover;
+  width: 100%;;
+  height: 100%;
+}
+.playButton {
+  float: left;
+  width: 100px;
+}
 .vrImg {
   object-fit: cover;
   width: 100%;
